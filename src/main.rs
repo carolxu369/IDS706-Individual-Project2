@@ -1,9 +1,8 @@
-// External crates used: `clap` for parsing command line arguments and `rusqlite` for SQLite database interaction
 use clap::{App, Arg, SubCommand};
-use rusqlite::{Connection, params};
+use rusqlite::Connection;
 use std::error::Error;
 
-// db module containing CRUD operations (ensure this is implemented in db.rs)
+// Ensure the db module is implemented in db.rs
 mod db;
 
 // Custom error type encompassing different kinds of errors our application might encounter
@@ -60,6 +59,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // Open a connection to the SQLite database
     let conn = Connection::open("my_cli_app.db")?;
+
+    // Call the create_table function here to ensure the table is created when the app starts
+    db::create_table(&conn)?;
 
     match matches.subcommand() {
         ("create", Some(sub_m)) => {

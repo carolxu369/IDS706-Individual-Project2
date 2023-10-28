@@ -78,19 +78,19 @@ For deployment or distribution, you might want to build an optimized version of 
    Run the binary directly from the terminal:
    - **Create a record**:
      ```sh
-     ./target/release/IDS706-Individual-Project2 create "data to insert"
+     ./target/release/ids706_individual_project2 create "data to insert"
      ```
    - **Read all records**:
      ```sh
-     ./target/release/IDS706-Individual-Project2 read
+     ./target/release/ids706_individual_project2 read
      ```
    - **Update a record**:
      ```sh
-     ./target/release/IDS706-Individual-Project2 update 1 "new data"
+     ./target/release/ids706_individual_project2 update 1 "new data"
      ```
    - **Delete a record**:
      ```sh
-     ./target/release/IDS706-Individual-Project2 delete 1
+     ./target/release/ids706_individual_project2 delete 1
      ```
 
 ## Using GitHub Copilot

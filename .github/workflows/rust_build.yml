@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: binary-artifact
-        path: target/release/IDS706-Individual-Project2
+        path: target/release/ids706_individual_project2
