@@ -14,10 +14,7 @@ pub fn create_table(conn: &Connection) -> Result<()> {
 
 /// Adds a new entry into the table
 pub fn create_entry(conn: &Connection, data: &str) -> Result<()> {
-    conn.execute(
-        "INSERT INTO my_table (data) VALUES (?1)",
-        [data],
-    )?;
+    conn.execute("INSERT INTO my_table (data) VALUES (?1)", [data])?;
     Ok(())
 }
 
@@ -46,9 +43,6 @@ pub fn update_entry(conn: &Connection, id: i32, data: &str) -> Result<()> {
 
 /// Deletes an entry from the table
 pub fn delete_entry(conn: &Connection, id: i32) -> Result<()> {
-    conn.execute(
-        "DELETE FROM my_table WHERE id = ?1",
-        [&id.to_string()],
-    )?;
+    conn.execute("DELETE FROM my_table WHERE id = ?1", [&id.to_string()])?;
     Ok(())
 }
