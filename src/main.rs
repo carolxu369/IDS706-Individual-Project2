@@ -32,7 +32,7 @@ impl Error for CliError {}
 fn main() -> Result<(), Box<dyn Error>> {
     let matches = App::new("My CLI App")
         .version("1.0")
-        .author("Your Name")
+        .author("Carol")
         .about("Rust CLI with SQLite Integration")
         // Define the subcommands and their arguments
         .subcommand(
@@ -82,21 +82,27 @@ fn main() -> Result<(), Box<dyn Error>> {
                 .value_of("DATA")
                 .ok_or(CliError::ArgumentError("Missing data for create".into()))?;
             db::create_entry(&conn, data)?;
-        },
+        }
         ("read", Some(_)) => {
             db::read_entries(&conn)?;
-        },
+        }
         ("update", Some(sub_m)) => {
-            let id_str = sub_m.value_of("ID").ok_or(CliError::ArgumentError("Missing ID for update".into()))?;
+            let id_str = sub_m
+                .value_of("ID")
+                .ok_or(CliError::ArgumentError("Missing ID for update".into()))?;
             let id: i32 = id_str.parse()?;
-            let data = sub_m.value_of("DATA").ok_or(CliError::ArgumentError("Missing data for update".into()))?;
+            let data = sub_m
+                .value_of("DATA")
+                .ok_or(CliError::ArgumentError("Missing data for update".into()))?;
             db::update_entry(&conn, id, data)?;
-        },
+        }
         ("delete", Some(sub_m)) => {
-            let id_str = sub_m.value_of("ID").ok_or(CliError::ArgumentError("Missing ID for delete".into()))?;
+            let id_str = sub_m
+                .value_of("ID")
+                .ok_or(CliError::ArgumentError("Missing ID for delete".into()))?;
             let id: i32 = id_str.parse()?;
             db::delete_entry(&conn, id)?;
-        },
+        }
         _ => return Err(Box::new(CliError::ArgumentError("Invalid command".into()))),
     }
 
