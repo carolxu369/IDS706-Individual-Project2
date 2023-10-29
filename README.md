@@ -46,7 +46,7 @@ Commands available:
 - `update [ID] [DATA]` - Update an existing record with the provided ID and new data.
 - `delete [ID]` - Delete a record by its ID.
 
-For example:
+For example:  
 **Execute Commands:**
    - Create a record:
      ```
@@ -62,7 +62,11 @@ For example:
      ```
    - Delete a record:
      ```
-     cargo run -- delete 1
+     cargo run -- delete 1  
+  
+Below is a screenshot of the result:
+
+![Development Output](/output/development.png)
 
 ### For Production:
 For deployment or distribution, you might want to build an optimized version of your application:
@@ -76,22 +80,26 @@ For deployment or distribution, you might want to build an optimized version of 
 
 2. **Execute the Compiled Binary**: 
    Run the binary directly from the terminal:
-   - **Create a record**:
-     ```sh
+   - Create a record:
+     ```
      ./target/release/ids706_individual_project2 create "data to insert"
      ```
-   - **Read all records**:
-     ```sh
+   - Read all records:
+     ```
      ./target/release/ids706_individual_project2 read
      ```
-   - **Update a record**:
-     ```sh
+   - Update a record:
+     ```
      ./target/release/ids706_individual_project2 update 1 "new data"
      ```
-   - **Delete a record**:
-     ```sh
-     ./target/release/ids706_individual_project2 delete 1
+   - Delete a record:
      ```
+     ./target/release/ids706_individual_project2 delete 1
+     ```  
+  
+Below is a screenshot of the result:
+
+![Production Output](/output/production.png)
 
 ## Using GitHub Copilot
 Throughout the development of this project, GitHub Copilot was actively used for:  
