@@ -1,7 +1,7 @@
 # IDS706-Individual-Project2: Rust CLI Binary with SQLite
 
 ## Description
-This project is a command-line interface (CLI) application written in Rust, integrated with an SQLite database. It's designed to demonstrate CRUD (Create, Read, Update, Delete) operations on a SQLite database using Rust's strong type system and safety features. Users can interact with the database by executing various commands through the CLI, which are then processed by the application to perform the corresponding database operations.
+This project is a command-line interface (CLI) application written in Rust, integrated with an SQLite database. It's designed to demonstrate CRUD (Create, Read, Update, Delete) operations on a SQLite database using Rust's strong type system and safety features. Users can interact with the database by executing various commands through the CLI, which are then processed by the application to perform the corresponding database operations. This is the link to my [YouTube video](https://youtu.be/-kfbU7d7e8k).
 
 ## Features
 - **CRUD**: Perform Create, Read, Update, and Delete operations on an SQLite database.
